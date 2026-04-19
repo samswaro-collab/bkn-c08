@@ -936,6 +936,18 @@ const EM_DATA = {
 
 <script>
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('sb-refresh').textContent = EM_DATA.lastRefreshed;
+  document.getElementById('kpi-rev').textContent  = '$' + EM_DATA.revenue + 'B';
+  document.getElementById('kpi-rev-g').textContent = '▲ +' + EM_DATA.revenueGrowth + '% YoY';
+  document.getElementById('kpi-bl').textContent   = '$' + EM_DATA.backlog + 'B';
+  document.getElementById('kpi-bl-g').textContent  = '▲ +' + EM_DATA.backlogGrowth + '% YoY';
+  document.getElementById('kpi-com').textContent  = EM_DATA.commercialDeliveries;
+  document.getElementById('kpi-exec').textContent = EM_DATA.execJetDeliveries;
+  document.getElementById('kpi-ebit').textContent = EM_DATA.ebitMargin + '%';
+  document.getElementById('kpi-fcf').textContent  = '$' + EM_DATA.freeCashFlow + 'M';
+  document.getElementById('kpi-roles').textContent = '~' + EM_DATA.openRoles + '+';
   // ── Outreach Playbook ────────────────────────────────────────────────
   const op = EM_DATA.outreachPlaybook;
   if(op && document.getElementById('op-headline')) {
@@ -970,17 +982,6 @@ const EM_DATA = {
       </div>`).join('');
   }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('sb-refresh').textContent = EM_DATA.lastRefreshed;
-  document.getElementById('kpi-rev').textContent  = '$' + EM_DATA.revenue + 'B';
-  document.getElementById('kpi-rev-g').textContent = '▲ +' + EM_DATA.revenueGrowth + '% YoY';
-  document.getElementById('kpi-bl').textContent   = '$' + EM_DATA.backlog + 'B';
-  document.getElementById('kpi-bl-g').textContent  = '▲ +' + EM_DATA.backlogGrowth + '% YoY';
-  document.getElementById('kpi-com').textContent  = EM_DATA.commercialDeliveries;
-  document.getElementById('kpi-exec').textContent = EM_DATA.execJetDeliveries;
-  document.getElementById('kpi-ebit').textContent = EM_DATA.ebitMargin + '%';
-  document.getElementById('kpi-fcf').textContent  = '$' + EM_DATA.freeCashFlow + 'M';
-  document.getElementById('kpi-roles').textContent = '~' + EM_DATA.openRoles + '+';
 });
 
 function switchSection(evt, id) {
